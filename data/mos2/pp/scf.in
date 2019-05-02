@@ -1,0 +1,42 @@
+ &control
+    calculation = 'scf'
+    restart_mode='from_scratch',
+    prefix='bn',
+    pseudo_dir = '/home/beachk2/PSEUDO/upf_files/LDA/HGH',
+    outdir= '/scratch/beachk2/Lumen/BSE/MoS2_2'
+    wf_collect=.true.
+    forc_conv_thr=1.0d-4
+    verbosity='high'
+/
+ &system
+    ibrav=0
+    nat=3
+    ntyp=2
+    nbnd=38
+    ecutwfc = 80
+    occupations='smearing'
+    smearing = 'gaussian'
+    degauss=0.005
+    force_symmorphic=.true.
+/
+ &electrons
+    mixing_mode = 'plain'
+    mixing_beta = 0.7
+    conv_thr =  1.0d-8
+ /
+ &ions
+    ion_dynamics = 'bfgs'
+ /
+ATOMIC_SPECIES
+ Mo 95.95 Mo.pz-sp-hgh.UPF
+ S  32.06 S.pz-hgh.UPF    
+ATOMIC_POSITIONS crystal
+Mo       0.333333333   0.666666666   0.213222533
+S        0.666666666   0.333333333   0.135389069
+S        0.666666666   0.333333333   0.291040285
+CELL_PARAMETERS angstrom
+3.1251331218    0    0            
+-1.5625665609    2.7064446738    0
+0    0    20                      
+K_POINTS automatic
+12 12 1 0 0 0
